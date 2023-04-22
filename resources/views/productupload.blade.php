@@ -40,47 +40,61 @@
 
     <div class="container register register-background custBack">
         <div class="row ">
-            <h1 class="text-warning text-center"><b>Add</b></h1>
+            <h1 class="text-warning text-center"><b>एक नया मेनू जोड़ें</b></h1>
             <div class="col-md-1">
             </div>
             <div class="col-md-4 register-left">
                 <img src="img/red-rocket-png-5.png" alt="">
-                <h2 class="text-white">We all welcome you...</h2>
-                <p class="text-white">if you have already registered then please login here...</p>
-                <a href="studentRegister.html">
-                    <a href="/login"><input type="submit" class="btn btn-xll btn-success" value="Login yourself Here"></a>
-                </a>
+                <h2 class="text-white">खाना देना सबसे अच्छी नीति है...</h2>
+                <p class="text-white">जो लेना है खा लो,आप जो खाते हैं उसे लें...</p>
             </div>
             <div class="col-md-1">
             </div>
             <div class="col-md-6 mb-5 register-right">
                 <form class="myForm" action="{{url('dishupload')}}" enctype='multipart/form-data' method="POST">
                     @csrf
-                    <Label class="p-1 text-white">ENTER YOUR DISH NAME</Label>
+                    <Label class="p-1 text-white">अपना डिश नाम दर्ज करें</Label>
                     <br>
-                    <input class="input-type p-2" type="text" name="dishName" placeholder="dishname" value="{{old('dishName')}}">                       
+                    <input class="input-type p-2" type="text" name="dishName" placeholder="डिश" value="{{old('dishName')}}">                       
                     <br>
                     <span style="color : yellow">@error('dishName'){{$message}}@enderror</span>
                     <br>
-                    <Label class="p-1 text-white">SELECT TYPE OF FOOD</Label>
+                    <Label class="p-1 text-white">भोजन का प्रकार चुनें</Label>
                     <br>
                     <select class="input-type p-2" name="type" id="">
-                        <option value="veg">vegitables</option>
-                        <option value="non-veg">non-vegitables</option>
+                        <option value="शाकाहारी">शाकाहारी</option>
+                        <option value="मांसाहारी">मांसाहारी</option>
                     </select>
                     <br>
                     <br>
-                    <Label class="p-1 text-white">Choose img of meals</Label>
+                    <Label class="p-1 text-white">भोजन की छवि चुनें</Label>
                     <br>
-                    <input class="input-type p-2" type="file" name="img" value="{{old('img')}}" placeholder = "choose image">                       
+                    <input class="input-type p-2" type="file" name="img" value="{{old('img')}}" placeholder = "भोजन की छवि">                       
                     <br>
                     <span style="color : yellow">@error('img'){{$message}}@enderror</span>
                     <br>
                     <input style="display: none;" type="text" name="logi"  value = "" require>                                           
                     
                     <input style="display: none;" type="text" name="latti" value = "" require>                       
+                    <Label class="p-1 text-white">Upload Image of your Home</Label>
                     <br>
-                    <input class="input-button bg-success p-2 text-white btn" type="submit" value="Register Now">
+                    <input class="input-type p-2" type="file" name="home1" value="{{old('home1')}}" placeholder = "choose image">                       
+                    <br>
+                    <span style="color : yellow">@error('home1'){{$message}}@enderror</span>
+                    <br>
+                    <Label class="p-1 text-white">Upload New Image of your Home</Label>
+                    <br>
+                    <input class="input-type p-2" type="file" name="home2" value="{{old('home2')}}" placeholder = "choose image">                       
+                    <br>
+                    <span style="color : yellow">@error('home2'){{$message}}@enderror</span>
+                    
+                    <br><Label class="p-1 text-white">Upload New Image of your Home</Label>
+                    <br>
+                    <input class="input-type p-2" type="file" name="home3" value="{{old('home2')}}" placeholder = "choose image">                       
+                    <br>
+                    <span style="color : yellow">@error('home3'){{$message}}@enderror</span>
+                    <br>
+                    <input class="input-button bg-success p-2 text-white btn" type="submit" value="व्यंजन जोड़ें">
                 </form>
             </div>
         </div>

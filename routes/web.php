@@ -25,9 +25,9 @@ Route::get('/login', function () {
 });
 Route::get('/productUpload', function () {
     return view('productupload');
-});
-Route::get('/additional', function () {
-    return view('booking');
+})->middleware('alreadylogedin');
+Route::get('/newhomeupload', function () {
+    return view('newhomeupload');
 });
 Route::post('/homeImg',[userController::class,'homeImgUpload']);
 Route::post('/doner',[userController::class,'doner']);
@@ -35,3 +35,5 @@ Route::post('/logger',[userController::class,'login']);
 Route::post('/dishupload',[userController::class,'dishupload']);
 Route::post('/home',[userController::class,'home']);
 Route::post('/findfood',[userController::class,'findfood']);
+Route::get('/logOut',[userController::class,'logOut']);
+

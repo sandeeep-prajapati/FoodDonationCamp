@@ -40,15 +40,15 @@
 
     <div class="container register register-background custBack">
         <div class="row ">
-            <h1 class="text-warning text-center"><b>Login Page</b></h1>
+            <h1 class="text-warning text-center"><b>लॉग इन करें</b></h1>
             <div class="col-md-1">
             </div>
             <div class="col-md-4 register-left">
                 <img src="img/red-rocket-png-5.png" alt="">
-                <h2 class="text-white">We all welcome you...</h2>
-                <p class="text-white">if you have already registered then please login here...</p>
+                <h2 class="text-white">हम सब आपका स्वागत करते हैं...</h2>
+                <p class="text-white">यदि आप यहां नए हैं तो कृपया अपना पंजीकरण कराएं...</p>
                 <a href="studentRegister.html">
-                    <a href="/login"><input type="submit" class="btn btn-xll btn-success" value="Login yourself Here"></a>
+                    <a href="/login"><input type="submit" class="btn btn-xll btn-success" value="अपने आप को लॉग इन करें"></a>
                 </a>
             </div>
             <div class="col-md-1">
@@ -56,19 +56,19 @@
             <div class="col-md-6 mb-5 register-right pt-5">
                 <form action="{{url('logger')}}" enctype='multipart/form-data' method="POST">
                     @csrf
-                    <Label class="p-1 text-white">ENTER YOUR EMAIL</Label>
+                    <Label class="p-1 text-white">अपना ईमेल दर्ज करें</Label>
                     <br>
-                    <input class="input-type p-2" type="email" name="email" placeholder="email" value="{{old('email')}}">                       
+                    <input class="input-type p-2" type="email" name="email" placeholder="ईमेल" value="{{old('email')}}">                       
                     <br>
                     <span style="color : yellow">@error('email'){{$message}}@enderror</span>
                     <br>
-                    <Label class="p-1 text-white">PASSWORD</Label>
+                    <Label class="p-1 text-white">मजबूत पासवर्ड चुनें</Label>
                     <br>
-                    <input class="input-type p-2" type="password" name="password" placeholder="PASSWORD" value="{{old('password')}}">
+                    <input class="input-type p-2" type="password" name="password" placeholder="पासवर्ड" value="{{old('password')}}">
                     <span style="color : yellow">@error('password'){{$message}}@enderror</span>
                     <br>
                     <br>
-                    <input class="input-button bg-success p-2 text-white btn" type="submit" value="Register Now">
+                    <input class="input-button bg-success p-2 text-white btn" type="submit" value="लॉगिन करें">
                 </form>
             </div>
         </div>

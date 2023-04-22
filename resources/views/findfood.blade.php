@@ -25,25 +25,30 @@
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
                 <ul class="navbar-nav">
                     
-                    @if(Session()->has('loginId'))
+                    @if(Session()->has('userId'))
+                    
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/userdashboard">Home</a>
+                        <a class="nav-link active" href="/">मुख्य डैशबोर्ड</a>
+                    </li>
+                    
+                    <li class="nav-item p-2">
+                        <a class="nav-link active" href="/productUpload">मेनू अपलोड करें</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/logOut">Logout</a>
+                        <a class="nav-link active" href="/logOut">लॉग आउट</a>
                     </li>
                     
                     @else
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/login">Sign In</a>
+                        <a class="nav-link active" href="/login">हस्ताक्षर</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/registration">Sign Up</a>
+                        <a class="nav-link active" href="/registration">पंजीकरण</a>
                     </li>
                     
                     @endif
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="#">Contact Us</a>
+                        <a class="nav-link active" href="#">संपर्क करें</a>
                     </li>
 
                 </ul>
@@ -60,174 +65,75 @@
                     @if(Session::has('fail'))
                     <div class="alert alert-danger">{{Session::get('fail')}}</div>
                     @endif
-        <div class="container">
-            <!-- header title -->
-            <div class="row p-2">
-                <div class="col-md-1">
 
-                </div>
-                <div class="col-md-11">
-                    <div class="row">
-                        <a href="#services" style="text-decoration: none;">are you not intrusted in your discription?</a>
-                    </div>
-                    <div class="row">
-                        <h3>आपका अमूल्य योगदान असंख्य भूखे <br> व्यक्तियों के लिए अमृत के समान पोषण के स्रोत के <br> रूप में कार्य करता है</h3>
-                    </div>
-                </div>
-            </div>
-            <!-- header img -->
+                        
+     
+    </div>
+    <!-- <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+
+@foreach($data as $all)
+<div class="row justify-content-center p-3">
+    <div class="col-md-4">
+        <div class="card" style="width:100%">
             <div class="row">
-                <img style="border-radius: 30px;" src="assets/newimg/qrxl.jpg" alt="" srcset="">
-            </div>
-            <!-- short introduction -->
-            <div class="row p-4">
-                <div class="col-md-1">
-
-                </div>
-                <div class="col-md-5">
-                    <h1><b> क्या ? ,<br> कैसे और क्यों ?  </b></h1>
-                    <h6 style="padding-top: 20px;">आज के समय में हमारे घरों में अक्सर भोजन की एक महत्वपूर्ण मात्रा बर्बाद हो जाती है, जबकि कई लोग भोजन की कमी के कारण भूखे रह जाते हैं। हमारी टीम बचे हुए भोजन को जरूरतमंद लोगों से जोड़ने के लिए हमारी वेबसाइट और एप्लिकेशन का उपयोग करके इस समस्या को हल करने के लिए समर्पित है। हम भोजन की बर्बादी को रोकने का प्रयास करते हैं और यह सुनिश्चित करते हैं कि कोई भी भूखा न रहे</h6>
-                    <p style="padding-top: 30px;">क्या आपके पास हमारे लिए कोई सुझाव है?</p>
-                    <form class="d-flex p-2" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
-                        role="search">
-                        <input style="background-color: rgb(180, 182, 185); border: 0px;" class="form-control me-2"
-                            type="search" placeholder="किसी संपर्क विवरण का उल्लेख करें " aria-label="Search">
-                        <button style="padding: 0,30px; border-radius: 7px;" class="btn btn-primary" type="submit"><b
-                                class="join">भेजें</b> </button>
-                    </form>
-                </div>
-                <div class="col-md-6">
-
-                </div>
-            </div>
-            <!-- services intro -->
-            <div class="row" style="padding-top: 50px;">
-                <h2><b>हम कैसे काम करता है, <br> आप बिभीन भागो में देख सकते हैं </b> </h2>
-            </div>
-            <!-- card -->
-            <div class="container" id ="services">
-                <div class="row" style="padding-top: 40px;">
-                    <div class="col-md-4 outline-success" style="padding-top: 20px; padding-bottom: 20px;">
-                        <!-- <img class="m-2" style="height: 50px; width: 50px;" src="assets/icon2/pen-ruler-solid.svg"
-                            alt="" srcset=""> -->
-                        <br>
-                        <p style="padding-top: 30px; padding-bottom: 30px;">
-                        आप खुद को वेबसाइट पर पंजीकृत करें और आप अपने पास बचे हुए भोजन के बारे में जानकारी प्रदान कर सकते हैं और अपना संपर्क नंबर और पता भी साझा कर सकते हैं। इससे बचे हुए भोजन को लोगों तक पहुंचाने के हमारे प्रयासों को बढ़ाने में मदद मिलेगी। 
-                        </p>
-                        
+                <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="{{$all->home1}}" class="d-block w-100" alt="...">
                     </div>
-                    <div class="col-md-4" style="padding-top: 20px; padding-bottom: 20px;">
-                        <br>
-                        <p style="padding-top: 30px; padding-bottom: 30px;">आपकी बहुमूल्य जानकारी हमें ज़रूरतमंद लोगों की पहचान करने और आपके अतिरिक्त भोजन को हमारी वेबसाइट के माध्यम से उनके साथ जोड़ने में सक्षम बनाएगी। डेटा अपलोड करके और हमें प्रासंगिक जानकारी प्रदान करके, हम इसका उपयोग उन लोगों के लाभ के लिए कर सकेंगे जिन्हें सहायता की आवश्यकता है। 
-</p>
-                        
+                    <div class="carousel-item">
+                    <img src="{{$all->home2}}" class="d-block w-100" alt="...">
                     </div>
-                    <div class="col-md-4" style="padding-top: 20px; padding-bottom: 20px;">
-                        <p style="padding-top: 30px; padding-bottom: 30px;">हमारी वेबसाइट की मदद से, जरूरतमंद व्यक्ति सहेजे गए भोजन तक पहुंचने के लिए आपके द्वारा प्रदान किए गए उपलब्ध विवरण से लाभान्वित हो सकते हैं।</p>
-                        
+                    <div class="carousel-item">
+                    <img src="{{$all->home3}}" class="d-block w-100" alt="...">
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <!-- templates -->
-            <div class="container">
-                <div class="row">
-                <form class="d-flex p-2 myForm" method="POST" action="home" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
-                        role="search">
-                        @csrf
-                        <input style="display: none;" type="text" name="logi"  value = "" require>                                           
-                        <input style="display: none;" type="text" name="latti" value = "" require>   
-                        <input style="background-color: rgb(180, 182, 185); border: 0px;" class="form-control me-2"
-                            type="search" name="ids" placeholder="Enter Id" aria-label="Search">
-                        <button style="padding: 0,30px; border-radius: 7px;" class="btn btn-primary" type="submit"><b
-                                class="join">भेजें</b> </button>
-                </form>
-                </div>
                 
-                <div class="row" id="plane" style="padding-top: 40px; padding-bottom: 40px;">
-                    <div class="col-md-6 custom">
-                        <p class="text-danger"><b>अन्न दान महा दान। एक प्रयास। एक थाली खुशी वाली ।</b></p>
-                        <h2>हम सब आपका स्वागत करते हैं<br></h2>
-                        <p>आपका ये बहुमूल्य योगदान हमारे लिए अतुल्य है, <br> जो हमें और शक्ति देता है। </p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="row" style="height: 180px;">
-
-                                </div>
-                                <div class="row kuch">
-                                    <img style="width: 120%; height: 120%;" src="assets/newimg/download.jpg" alt=""
-                                        srcset="">
-                                </div>
-
-
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="row" style="padding-top: 20px">
-                                    <img class="p-2"  src="assets/newimg/qrl.jpg" alt="">
-                                </div>
-                                <div class="row">
-                                    <img class="p-2" src="assets/newimg/unnamed.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row new p-3">
-                    <h3>
-                        "We are doing our best<br>to give contact to anonymous stuffs, with the help of these details you can get back"
-                    </h3>
-                </div>
             </div>
-
-            
+            <div class="card-body">
+                <h5 class="card-title">{{$all->dishName}}</h5>
+                <p class="card-text">अपलोड किया गया समय : {{$all->time}}</p>
+                <p class="card-text">खाने की किस्म : {{$all->type}}</p>
+            </div>
         </div>
-
-
     </div>
-    <div class="container-fluid bg-dark">
-        <div class="row p-4">
-            <div class="col-md-4">
-                <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="/">home</a></p>
-                </div>
-                <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#services">service</a></p>
-                </div>
-                <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#plane">future planes</a></p>
-                </div>
-            </div>
-
-            <div class="col-md-4 p-4 justify-content-center" >
-                <h3 class="text-white text-center">Ehelptag</h3>
-                <div class="row justify-content-center center">
-                            <img style="width: 50px; height: auto;" src="assets/icons/instagram.svg" alt="" srcset="">
-                        
-                            <img style="width: 50px; height: auto;" src="assets/icons/linkedin.svg" alt="" srcset="">
-                        
-                            <img style="width: 50px; height: auto;" src="assets/icons/twitter.svg" alt="" srcset="">
-                </div>
-
-            </div>
-        
-            <div class="col-md-4 p-4">
-                <div class="col-sm-12" style=" padding-bottom: 100px;">
-                    <form class="d-flex p-2" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
-                        role="search">
-                        <input style="background-color: rgb(180, 182, 185); border: 0px;" class="form-control me-2"
-                            type="search" placeholder="mention any contact details " aria-label="Search">
-                        <button style="padding: 0,30px; border-radius: 7px;" class="btn btn-primary" type="submit"><b
-                                class="join">Send</b> </button>
-                    </form>
-            </div>
+    <div class="col-md-8">
+        <div class="row">
+        <iframe src="https://google.com/maps?q={{$all->latti}},{{$all->logi}}&h1=es;z=14&output=embed" style="width: 100%; height: 300px;"></iframe>
 
         </div>
     </div>
-    </div>
+  @endforeach
 
-    </div>
 
     <script type="text/javascript">
                     function getLocation(){

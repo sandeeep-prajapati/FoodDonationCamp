@@ -25,25 +25,32 @@
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
                 <ul class="navbar-nav">
                     
-                    @if(Session()->has('loginId'))
+                    @if(Session()->has('userId'))
+                    
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/userdashboard">Home</a>
+                        <a class="nav-link active" href="/">मुख्य डैशबोर्ड</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/logOut">Logout</a>
+                        <a class="nav-link active" href="#search">खाना ढूंढें</a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link active" href="/productUpload">मेनू अपलोड करें</a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link active" href="/logOut">लॉग आउट</a>
                     </li>
                     
                     @else
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/login">Sign In</a>
+                        <a class="nav-link active" href="/login">हस्ताक्षर</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="/registration">Sign Up</a>
+                        <a class="nav-link active" href="/registration">पंजीकरण</a>
                     </li>
                     
                     @endif
                     <li class="nav-item p-2">
-                        <a class="nav-link active" href="#">Contact Us</a>
+                        <a class="nav-link active" href="#">संपर्क करें</a>
                     </li>
 
                 </ul>
@@ -68,16 +75,13 @@
                 </div>
                 <div class="col-md-11">
                     <div class="row">
-                        <a href="#services" style="text-decoration: none;">are you not intrusted in your discription?</a>
-                    </div>
-                    <div class="row">
                         <h3>आपका अमूल्य योगदान असंख्य भूखे <br> व्यक्तियों के लिए अमृत के समान पोषण के स्रोत के <br> रूप में कार्य करता है</h3>
                     </div>
                 </div>
             </div>
             <!-- header img -->
             <div class="row">
-                <img style="border-radius: 30px;" src="assets/newimg/qrxl.jpg" alt="" srcset="">
+                <img style="border-radius: 30px;" src="new/img4.jpg" alt="" srcset="">
             </div>
             <!-- short introduction -->
             <div class="row p-4">
@@ -130,14 +134,14 @@
             </div>
             <!-- templates -->
             <div class="container">
-                <div class="row">
+                <div class="row" id="search">
                 <form class="d-flex p-2 myForm" method="POST" action="home" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
                         role="search">
                         @csrf
                         <input style="display: none;" type="text" name="logi"  value = "" require>                                           
                         <input style="display: none;" type="text" name="latti" value = "" require>   
                         <input style="background-color: rgb(180, 182, 185); border: 0px;" class="form-control me-2"
-                            type="search" name="ids" placeholder="Enter Id" aria-label="Search">
+                            type="search" name="ids" placeholder="क्या आप भोजन ढूंढ रहे हैं" aria-label="Search">
                         <button style="padding: 0,30px; border-radius: 7px;" class="btn btn-primary" type="submit"><b
                                 class="join">भेजें</b> </button>
                 </form>
@@ -156,7 +160,7 @@
 
                                 </div>
                                 <div class="row kuch">
-                                    <img style="width: 120%; height: 120%;" src="assets/newimg/download.jpg" alt=""
+                                    <img style="width: 120%; height: 120%;" src="new/img1.jpg" alt=""
                                         srcset="">
                                 </div>
 
@@ -164,10 +168,10 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="row" style="padding-top: 20px">
-                                    <img class="p-2"  src="assets/newimg/qrl.jpg" alt="">
+                                    <img class="p-2"  src="new/img2.jpg" alt="">
                                 </div>
                                 <div class="row">
-                                    <img class="p-2" src="assets/newimg/unnamed.png" alt="">
+                                    <img class="p-2" src="new/img3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -176,7 +180,8 @@
 
                 <div class="row new p-3">
                     <h3>
-                        "We are doing our best<br>to give contact to anonymous stuffs, with the help of these details you can get back"
+                    रोटी से विचित्र कुछ भी नहीं, <br> इंसान पाने के लिए भी दौड़ता हैं <br> और पचाने के लिए भी।
+
                     </h3>
                 </div>
             </div>
@@ -190,13 +195,13 @@
         <div class="row p-4">
             <div class="col-md-4">
                 <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="/">home</a></p>
+                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="/">होम</a></p>
                 </div>
                 <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#services">service</a></p>
+                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#services">सेवाए</a></p>
                 </div>
                 <div class="row text-center">
-                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#plane">future planes</a></p>
+                    <p class="text-white"><a style="text-decoration : none;" class="text-white" href="#plane">हमारा नज़रिया</a></p>
                 </div>
             </div>
 
@@ -214,13 +219,18 @@
         
             <div class="col-md-4 p-4">
                 <div class="col-sm-12" style=" padding-bottom: 100px;">
-                    <form class="d-flex p-2" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
+                <div class="row">
+                <form class="d-flex p-2 myForm" method="POST" action="home" style="border-radius: 10px; background-color: rgb(180, 182, 185);"
                         role="search">
+                        @csrf
+                        <input style="display: none;" type="text" name="logi"  value = "" require>                                           
+                        <input style="display: none;" type="text" name="latti" value = "" require>   
                         <input style="background-color: rgb(180, 182, 185); border: 0px;" class="form-control me-2"
-                            type="search" placeholder="mention any contact details " aria-label="Search">
+                            type="search" name="ids" placeholder="क्या आप भोजन ढूंढ रहे हैं" aria-label="Search">
                         <button style="padding: 0,30px; border-radius: 7px;" class="btn btn-primary" type="submit"><b
-                                class="join">Send</b> </button>
-                    </form>
+                                class="join">भेजें</b> </button>
+                </form>
+                </div>
             </div>
 
         </div>
