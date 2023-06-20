@@ -114,10 +114,11 @@
                         document.querySelector('.myForm input[name = "latti"]').value = position.coords.latitude;
                         document.querySelector('.myForm input[name = "logi"]').value = position.coords.longitude;
                     }
+                    
                     function showError(error){
                         switch(error.code){
                             case error.PERMISSION_DENIED:
-                                alert("please allow to findout where is our student is ?");
+                                alert("please allow the location....");
                                 location.reload();
                                 break;
                         }

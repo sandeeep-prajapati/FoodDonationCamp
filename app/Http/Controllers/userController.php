@@ -131,11 +131,11 @@ class userController extends Controller
             'logi'=>$req->input('logi'),
         ]);
         $latti = $req->input('latti');
-        $compLatti =round($latti,5);
+        // $compLatti =round($latti,5);
         $logi = $req->input('logi');
-        $compLogi =round($logi,5);
+        // $compLogi =round($logi,5);
          if($result){
-         $user1 = DB::table('products')->where('latti','>',$compLatti-0.00001)->where('latti','<',$compLatti+0.00001)->where('logi', '>',$compLogi-0.001)->where('logi','<',$compLogi+0.001)->where('useless','>',Carbon::now())->get();
+         $user1 = DB::table('products')->where('latti','>',$latti-0.0000010000)->where('latti','<',$latti+0.0000010000)->where('logi', '>',$logi-0.0000010000)->where('logi','<',$logi+0.0000010000)->where('useless','>',Carbon::now())->get();
              return view('findfood',['data'=>$user1]);
             // return $user1;
         }
